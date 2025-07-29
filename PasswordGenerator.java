@@ -37,6 +37,24 @@ public class PasswordGenerator {
         return shuffleString(password.toString());
     }
 
+     private char randomChar(String pool) {
+        int index = random.nextInt(pool.length());
+        return pool.charAt(index);
+    }
+
+     private String shuffleString(String input) {
+        char[] chars = input.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            int randomIndex = random.nextInt(chars.length);
+            char temp = chars[i];
+            chars[i] = chars[randomIndex];
+            chars[randomIndex] = temp;
+        }
+        return new String(chars);
+    }
+
+
+
     
 }
  
