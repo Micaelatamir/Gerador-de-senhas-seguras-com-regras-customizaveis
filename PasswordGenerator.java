@@ -1,4 +1,4 @@
-public import java.security.SecureRandom;
+import java.security.SecureRandom;
 
 public class PasswordGenerator {
 
@@ -52,11 +52,24 @@ public class PasswordGenerator {
         }
         return new String(chars);
     }
+      public static void main(String[] args) {
+        PasswordGenerator generator = new PasswordGenerator();
+
+        int length = 12;
+        boolean useUpper = true;
+        boolean useLower = true;
+        boolean useNumbers = true;
+        boolean useSpecial = true;
+
+        String password = generator.generatePassword(length, useUpper, useLower, useNumbers, useSpecial);
+        System.out.println("Senha gerada: " + password);
+    }
+}
 
 
 
     
-}
+
  
     
 
